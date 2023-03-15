@@ -1,0 +1,111 @@
+@import-normalize; /* bring in normalize.css styles */
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body {
+  font-family: "Mulish", sans-serif;
+  background: rgb(34, 43, 195);
+  background: linear-gradient(
+    145deg,
+    rgba(34, 43, 195, 0.7315301120448179) 0%,
+    rgba(45, 253, 240, 0.7091211484593838) 100%
+  );
+}
+.calculator-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.relative {
+  position: relative;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-result {
+  position: relative;
+  width: calc((80px - 8px) * 4);
+  height: 70px;
+  text-align: right;
+  padding: 4px 16px;
+  outline: none;
+  border: none;
+  background-color: #233444;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Mulish", sans-serif;
+}
+
+.error {
+  position: absolute;
+  top: 52px;
+  right: 16px;
+  color: #e94949;
+  font-weight: 300;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-auto-rows: minmax(60px, auto);
+  grid-column: 1 / 4;
+
+  .button {
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    font-family: "Mulish", sans-serif;
+    color: #233444;
+    transition: all 0.4s ease-out;
+
+    &:nth-child(4n) {
+      border-right: 1px solid transparent;
+    }
+    &:nth-child(n + 13) {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover {
+      color: #0d3d69;
+      background-color: #e1e1e1;
+    }
+
+    &:active {
+      color: #e1e1e1;
+      background-color: #0d3d69;
+    }
+
+    &--operator {
+      background-color: #dcd6d6;
+      border-right: 1px solid #dfdada;
+
+      &:hover {
+        background-color: #e4e4f3;
+      }
+    }
+
+    &--clear {
+      background-color: #e94949;
+      color: #fff;
+      border-right: 1px solid #e94949;
+
+      &:hover {
+        background-color: #cc5050;
+      }
+    }
+
+    &--result {
+      background-color: #1e9857;
+      color: #fff;
+
+      &:hover {
+        background-color: #33c577;
+      }
+    }
+  }
+}
